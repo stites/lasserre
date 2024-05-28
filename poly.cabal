@@ -1,0 +1,33 @@
+cabal-version: 3.4
+name:          poly
+version:       0.1.0.0
+license:
+author:        Sam Stites
+maintainer:    Sam Stites <spnony@f.cge.qri>#rot13
+build-type:    Simple
+
+common base
+  default-language: GHC2021
+  build-depends:
+    , base                  ^>=4.18.0.0
+    , bytestring
+    , co-log
+    , containers
+    , hmatrix
+    , hspray
+    , math-functions
+    , numeric-prelude
+    , pretty-show
+    , text
+    , unordered-containers
+
+-- library
+--   import:          base
+--   hs-source-dirs:  src
+--   exposed-modules:
+--     Poly
+
+executable poly
+  import:         base
+  hs-source-dirs: exe
+  main-is:        Main.hs
