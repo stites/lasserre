@@ -1,5 +1,5 @@
 cabal-version: 3.4
-name:          poly
+name:          polylang
 version:       0.1.0.0
 license:
 author:        Sam Stites
@@ -21,13 +21,27 @@ common base
     , text
     , unordered-containers
 
--- library
---   import:          base
---   hs-source-dirs:  src
---   exposed-modules:
---     Poly
+library
+  import:          base
+  hs-source-dirs:  src
+  exposed-modules:
+    Math.Algebra.Hspray.Lasserre
+    Math.Algebra.Hspray.Utils
 
-executable poly
+executable int
   import:         base
   hs-source-dirs: exe
   main-is:        Main.hs
+  build-depends:
+    polylang
+
+test-suite spec
+  import:         base
+  type:           exitcode-stdio-1.0
+  main-is:        Spec.hs
+  hs-source-dirs: test
+  build-depends:
+    , polylang
+    , hedgehog
+    , hspec
+    , hspec-hedgehog

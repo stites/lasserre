@@ -94,7 +94,7 @@
           dev = {
             description = "Run the project with ghciwatch";
             exec = ''
-              ghciwatch --clear --watch exe/ --test-ghci Main.main --before-reload-shell treefmt
+              ghciwatch --clear --watch test/ --watch src/ --watch exe/ --test-ghci Main.main --before-reload-shell treefmt
             '';
             category = "Primary";
           };
