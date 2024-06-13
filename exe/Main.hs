@@ -54,7 +54,7 @@ main = do
   let v2 = [2, 2, 3]
   let v3 = [3, 4, 5]
   let v4 = [3, 2, 1]
-  let simplex = [v1, v2, v3, v4]
+  let simplex = mkSimplex [v1, v2, v3, v4]
 
   let action = Log.cmap fmtMessage logTextStdout
   o <- usingLoggerT action $ integrate poly simplex
