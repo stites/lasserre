@@ -15,6 +15,7 @@ common base
     , containers
     , hmatrix
     , hspray
+    , vector
     , math-functions
     , numeric-prelude
     , pretty-show

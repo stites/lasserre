@@ -117,6 +117,7 @@
             ghciwatch
             nixd
             just
+            latte-integrale
             (python3.withPackages (p: with p; [ sympy numpy ]))
             (rWrapper.override { packages = [ rPackages.spray ]; })
             # (julia.withPackages [ "TypedPolynomials" "LinearAlgebra" ]) # broken
