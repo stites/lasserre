@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     systems.url = "github:nix-systems/default";
-    flake-parts.url = "github:hercules-ci/flake-parts";
+ polylang   flake-parts.url = "github:hercules-ci/flake-parts";
     haskell-flake.url = "github:srid/haskell-flake";
     treefmt-nix.url = "github:numtide/treefmt-nix";
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
@@ -28,7 +28,7 @@
             root = ./.;
             fileset = lib.fileset.unions [
               ./exe
-              ./poly.cabal
+              ./lasserre.cabal
             ];
           });
           devShell = {
@@ -101,11 +101,11 @@
         };
 
         # haskell-flake doesn't set the default package, but you can do it here.
-        packages.default = self'.packages.poly;
-        apps.default = self'.apps.poly;
+        packages.default = self'.packages.lasserre;
+        apps.default = self'.apps.lasserre;
 
         devShells.default = pkgs.mkShell {
-          name = "poly";
+          name = "lasserre";
           meta.description = "Haskell development environment";
           inputsFrom = [
             config.haskellProjects.default.outputs.devShell
