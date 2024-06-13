@@ -1,0 +1,9 @@
+A quick implementation of Lasserre, 2020: /Simple Formula for Integration of Polynomials on a Simplex/. 
+
+Some notes:
+- this implementation builds on top of the impressive [[https://hackage.haskell.org/package/hspray][hspray]], please give this a look.
+- There is some unfinished code that performs integration over a convex polytope, using a simple cut method.
+- ~integrate~ just uses the ~Identity~ monad for debugging -- this can be removed.
+- ~/test/Spec.hs~ has some examples, and ~exe/Main.hs~ has the example documented in [[https://www.r-bloggers.com/2022/12/exact-integral-of-a-polynomial-on-a-simplex/][Stephane Laurent's r-bloggers post]].
+
+~cabal new-test~ to build. A dev environment is also provided by ~nix develop~.
